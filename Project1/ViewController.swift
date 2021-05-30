@@ -10,7 +10,7 @@ import UIKit
 class ViewController: UITableViewController {
     var pictures = [String]()
     
-    func loadPictures() {
+    @objc func loadPictures() {
         let fileManager = FileManager.default
         let resourcePath = Bundle.main.resourcePath!
         
@@ -24,7 +24,9 @@ class ViewController: UITableViewController {
         
         pictures.sort()
         
-        print("Pictures: \(pictures)")
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
     
     override func viewDidLoad() {
@@ -33,7 +35,7 @@ class ViewController: UITableViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         title = "Storm Viewer"
         
-        loadPictures()
+        performSelector(inBackground: #selector(loadPictures), with: nil)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
