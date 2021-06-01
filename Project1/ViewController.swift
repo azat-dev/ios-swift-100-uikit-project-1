@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UITableViewController {
+class ViewController: UICollectionViewController {
     var pictures = [String]()
     
     @objc func loadPictures() {
@@ -25,7 +25,7 @@ class ViewController: UITableViewController {
         pictures.sort()
         
         DispatchQueue.main.async {
-            self.tableView.reloadData()
+            self.collectionView.reloadData()
         }
     }
     
@@ -38,13 +38,19 @@ class ViewController: UITableViewController {
         performSelector(inBackground: #selector(loadPictures), with: nil)
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return pictures.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Picture", for: indexPath)
-        cell.textLabel?.text = pictures[indexPath.row]
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PictureCell", for: indexPath) as? PictureCell else {
+            fatalError("Unable to dequeue PictureCell")
+        }
+        
+        let picture = pictures[indexPath.item]
+        cell.name.text = picture
+        cell.imageView.image = UIImage(named: picture)
+        cell.imageView.layer.cornerRadius = 10
         
         return cell
     }
@@ -63,8 +69,8 @@ class ViewController: UITableViewController {
         navigationController?.pushViewController(detailViewController, animated: true)
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        openDetailView(pictureIndex: indexPath.row)
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        openDetailView(pictureIndex: indexPath.item)
     }
 }
 

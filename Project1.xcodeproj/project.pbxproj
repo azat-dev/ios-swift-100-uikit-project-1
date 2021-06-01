@@ -24,6 +24,8 @@
 		AA36029226518EF4001370CF /* nssl0033.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AA36028826518EF4001370CF /* nssl0033.jpg */; };
 		AA36029326518EF4001370CF /* nssl0034.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AA36028926518EF4001370CF /* nssl0034.jpg */; };
 		AA601D632651A5F3009F9905 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA601D622651A5F3009F9905 /* DetailViewController.swift */; };
+		AA9A79B22666197E00261E75 /* PictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9A79B12666197E00261E75 /* PictureCell.swift */; };
+		AA9A79B4266619CA00261E75 /* Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9A79B3266619CA00261E75 /* Picture.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		AA36028826518EF4001370CF /* nssl0033.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nssl0033.jpg; sourceTree = "<group>"; };
 		AA36028926518EF4001370CF /* nssl0034.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nssl0034.jpg; sourceTree = "<group>"; };
 		AA601D622651A5F3009F9905 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		AA9A79B12666197E00261E75 /* PictureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureCell.swift; sourceTree = "<group>"; };
+		AA9A79B3266619CA00261E75 /* Picture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picture.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,8 @@
 				AA36026E26518DA1001370CF /* ViewController.swift */,
 				AA601D622651A5F3009F9905 /* DetailViewController.swift */,
 				AA36027026518DA1001370CF /* Main.storyboard */,
+				AA9A79B12666197E00261E75 /* PictureCell.swift */,
+				AA9A79B3266619CA00261E75 /* Picture.swift */,
 				AA36027326518DA2001370CF /* Assets.xcassets */,
 				AA36027526518DA2001370CF /* LaunchScreen.storyboard */,
 				AA36027826518DA2001370CF /* Info.plist */,
@@ -188,7 +194,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA9A79B4266619CA00261E75 /* Picture.swift in Sources */,
 				AA36026F26518DA1001370CF /* ViewController.swift in Sources */,
+				AA9A79B22666197E00261E75 /* PictureCell.swift in Sources */,
 				AA36026B26518DA1001370CF /* AppDelegate.swift in Sources */,
 				AA36026D26518DA1001370CF /* SceneDelegate.swift in Sources */,
 				AA601D632651A5F3009F9905 /* DetailViewController.swift in Sources */,
